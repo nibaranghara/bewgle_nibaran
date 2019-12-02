@@ -1,0 +1,107 @@
+[
+    {"id":1,
+        "image":"boatSpeakers.jpg",
+        "Name":" Boat Bluetooth Speakers",
+        "Price":"Rs.1530",
+        "title":"Bring home this speaker from JBL and blast your favourite tunes without any hassle. This speaker is Bluetooth-enabled (4.1) .",
+        "domain": "amazon.in",
+        "category": "Bluetooth Speakers", 
+        "productId": "ABCD1234", 
+        "createdAt": "2018-08-31T09:36:08.448Z", 
+        "reviewCount": 3013,
+        "latestReviewDate": "2018-10-21T00:00:00.000Z",
+        "topScores":
+        [ 
+            { "topic": "Sound Quality","score": 4.6 },
+            { "topic": "Bass", "score": 4.2 },
+            { "topic": "Design and Build", "score": 4.2 },
+            { "topic": "Battery Backup", "score": 4.2 } 
+        ] 
+        
+    },
+
+    {"id":2,
+        "image":"boseSpeakers.jpg",
+        "Name":"Bose Bluetooth Speakers",
+        "Price":"Rs.236",
+        "title":"Get the party started wherever you are with the Bose SoundLink Color II Bluetooth speaker. Trendy in looks and superior in performance.",
+        "domain": "amazon.in",
+        "category": "Bluetooth Speakers", 
+        "productId": "ABCD1234", 
+        "createdAt": "2018-08-31T09:36:08.448Z", 
+        "reviewCount": 2013,
+        "latestReviewDate": "2018-10-21T00:00:00.000Z",
+        "topScores":
+        [ 
+            { "topic": "Sound Quality","score": 4.6 },
+            { "topic": "Bass", "score": 4.2 },
+            { "topic": "Design and Build", "score": 4.2 },
+            { "topic": "Battery Backup", "score": 4.2 } 
+        ] 
+        
+    },
+    {"id":3,
+        "image":"iballSpeakers.jpg",
+        "Name":"Iball Bluetooth Speakers",
+        "Price":"Rs.900",
+        "title":"Is your speaker system a hassle to carry around? Well, then bring home this iBall Musi Cube speaker and take music everywhere you go.",
+        "domain": "amazon.in",
+        "category": "Bluetooth Speakers", 
+        "productId": "ABCD1234", 
+        "createdAt": "2018-08-31T09:36:08.448Z", 
+        "reviewCount": 1645,
+        "latestReviewDate": "2018-10-21T00:00:00.000Z",
+        "topScores":
+        [ 
+            { "topic": "Sound Quality","score": 4.6 },
+            { "topic": "Bass", "score": 4.2 },
+            { "topic": "Design and Build", "score": 4.2 },
+            { "topic": "Battery Backup", "score": 4.2 } 
+        ] 
+    
+        
+    },
+    {"id":4,
+        "image":"infinitySpeakers.jpg",
+        "Name":"Infinity Bluetooth Speakers",
+        "Price":"Rs.900",
+        "title":"Is your speaker system a hassle to carry around? Well, then bring home this iBall Musi Cube speaker and take music everywhere you go.",
+        "domain": "amazon.in",
+        "category": "Bluetooth Speakers", 
+        "productId": "ABCD1234", 
+        "createdAt": "2018-08-31T09:36:08.448Z", 
+        "reviewCount": 1645,
+        "latestReviewDate": "2018-10-21T00:00:00.000Z",
+        "topScores":
+        [ 
+            { "topic": "Sound Quality","score": 4.6 },
+            { "topic": "Bass", "score": 4.2 },
+            { "topic": "Design and Build", "score": 4.2 },
+            { "topic": "Battery Backup", "score": 4.2 } 
+        ] 
+    
+        
+    },
+    {"id":5,
+        "image":"iballSpeakers.jpg",
+        "Name":"Iball Bluetooth Speakers",
+        "Price":"Rs.900",
+        "title":"Is your speaker system a hassle to carry around? Well, then bring home this iBall Musi Cube speaker and take music everywhere you go.",
+        "domain": "amazon.in",
+        "category": "Bluetooth Speakers", 
+        "productId": "ABCD1234", 
+        "createdAt": "2018-08-31T09:36:08.448Z", 
+        "reviewCount": 1645,
+        "latestReviewDate": "2018-10-21T00:00:00.000Z",
+        "topScores":
+        [ 
+            { "topic": "Sound Quality","score": 4.6 },
+            { "topic": "Bass", "score": 4.2 },
+            { "topic": "Design and Build", "score": 4.2 },
+            { "topic": "Battery Backup", "score": 4.2 } 
+        ] 
+    
+        
+    }
+    
+]

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bluetooth Speakers</title>
+    <center>
+        <h1>Bluetooth Speakers</h1>
+    </center>
+  
+    <style>
+       table{
+           background-image: url("forbg1.jpg");
+           background-repeat: no-repeat, repeat;
+           background-size: cover;
+       }
+       .desc 
+       {
+        
+            text-align: center;
+            /* width: 300px; */
+       }
+       .invisible {
+        text-align: center;
+        width:30px;
+    border: none;
+    background-color:transparent;
+       }
+            table {
+                
+                width: 50px;
+                height: 100%;  
+                /* padding: 30%; */
+            }
+            
+            th, td {
+              text-align: center;
+              /* padding: 4px; */
+              width:30px;
+            }
+            
+            tr:nth-child() {background-color: #f2f2f2;}
+            </style>
+    <style>
+    img{
+        width: 70%;
+        height: 70%;
+        object-fit: fill;
+    }
+    </style>
+    <!-- <script src="jquery-3.3.1.min.js"></script> -->
+    <script src="jquery-1.8.3.min.js"></script>
+    <!-- <table>
+            <tr>
+                <th align ="center">ID</th>
+                    <th>Name</th>
+                    
+                </tr>
+            </table> -->
+          
+
+    <script>
+
+
+function pay(){
+            window.location.replace("http://localhost/speakers/payment.html");
+        }
+       
+
+    function myfunction(){
+        var id=1;
+        var grandtotal=0;
+        if(typeof(JSON)=="object")
+        {
+            $.ajax({
+                url:'/speakers/MyDataJson.json',
+               // url:'/MyData.php',
+                type:'GET',
+                contentType:'application/json',
+                success: function(data)
+                                    {
+                                           //debugger;
+                                   
+                                        for(index=0;index<data.length;index++)
+                                        {
+                                          
+
+                                                        var row= 
+                                           "<tr><td>"+data[index].id+"</td><td><img src='"+data[index].image+"'style="+"height:150px;width:10px"+"</td>"+
+                                                       "<td>"+data[index].Name+"</td>"+
+                                                       "<td>"+data[index].Price+"</td>"+ "<td> <div class ='desc'>"+data[index].title+"</div></td>"+ //"<td>"+data[index].domain+"</td>"+
+                                                       // "<td>"+data[index].category+"</td>"+// "<td>"+data[index].productId+"</td>"+"<td>"+data[index].createdAt+"</td>"+
+                                                        "<td>"+data[index].reviewCount+"</td>"+//"<td>"+data[index].latestReviewDate+"</td>"+
+                                                     //   "<td>"+data[index].topScores+"</td>"+
+                                                        "</td><td><input type='button' id='btnDynamic' value='Add to cart' name1="+data[index].Item+" p="+data[index].Price+"></td></tr>"             
+                                                       
+
+
+                                            $('#myTable').append(row);
+
+                                        }
+                                        
+                                    },
+                error: function(err)
+                                    {
+                                   //  debugger;
+                                    alert("something went wrong");
+                                    },
+
+            });
+        }
+        else
+        {
+            alert("Please upgrade");
+        }
+
+       
+
+$('#btnDynamic').live('click',function(){
+            var quantity=1;
+
+             var name= $($(this).parent().parent().children()[2]).html();
+             var price=$($(this).parent().parent().children()[3]).html();
+            
+
+                var totalprice=price;
+            var newrow="<tr><td>"+id+"</td><td>"+name+"</td><td id='q'>"+
+                                                     quantity+"</td><td><input type='button' value='+' id='addq'></td><td><input type='button' value='-' id='subq'></td><td id='p'>"+ price+"</td><td id='t'>"+totalprice + "</td></tr>"
+                                                      $('#myTable1').append(newrow); 
+                                                      id++;                                   
+             
+              var p2=parseInt($(this).attr('p'));
+            grandtotal+=p2;
+            alert("grand"+grandtotal);
+             
+            });
+
+//+ button
+
+            $('#addq').live('click',function(){
+                debugger;
+
+                //var newquantity;
+               var newquantity=parseInt($($(this).parent().parent().children()[2]).html());
+               
+               
+               newquantity++;
+               $($(this).parent().parent().children()[2]).html(newquantity);
+                //alert(newquantity);
+
+                var newprice=parseInt($($(this).parent().parent().children()[5]).html());
+                var newtotal=newquantity*newprice;
+                $($(this).parent().parent().children()[6]).html(newtotal);
+
+                
+                
+                grandtotal+=newprice;
+                alert("grand"+grandtotal);
+                $($(this).parent().parent().children()[6]).html(newtotal);
+               
+            })
+
+//- button
+
+            $('#subq').live('click',function(){
+                var newquantity=parseInt($($(this).parent().parent().children()[2]).html());
+                if(newquantity>1)
+                {
+               newquantity--;
+               $($(this).parent().parent().children()[2]).html(newquantity);
+                //alert(newquantity);
+
+                var newprice=parseInt($($(this).parent().parent().children()[5]).html());
+                var newtotal=newquantity*newprice;
+                $($(this).parent().parent().children()[6]).html(newtotal);
+                var p2=parseInt($(this).attr('p'));
+               
+                grandtotal-=newprice;
+                alert("grand"+grandtotal);
+
+                }
+                else{
+                $($(this).parent().parent()).remove();
+
+               }
+            })
+            // function grandTotal()
+            // {
+            //     document.getElementById("total").innerText=grandtotal;
+            // }
+            // function 
+
+    }
+    </script>
+</head>
+<body onload="myfunction()">
+      
+    <table id="myTable" style="height: 600px;width: 100%" border="1">
+    <tr>
+            
+        <th>Id</th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Review Count</th>
+        <th>Click to Add in Cart</th>    
+    </tr>
+</table>
+</br>
+</br>
+    <div>
+    <table id="myTable1" style="width: 100%;" border="1">
+            <tr>
+                <th>ID</th>
+                <th>Item</th>
+                <th colspan="3">Quantity</th>
+                <th>Price</th>
+                <th colspan="2">Total</th>
+                <th> Grand Total:</th>
+            </tr>
+           
+               
+           
+            
+            </table>
+            <input type="button" id="gt"value="Make payment" onclick="pay()" >
+        </div>
+</body>
+</html>
